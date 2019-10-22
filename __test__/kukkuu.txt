@@ -2,7 +2,7 @@ Git-ohjeita
 Kun olet omassa brachissa:
 1. git add
 2. git commit
-3. git push origin push (oma branch)
+3. git push origin (oma branch)
 4. GitHubissa pull request
 5. git checkout master
 6. merge pull request
