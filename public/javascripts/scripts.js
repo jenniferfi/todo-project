@@ -12,9 +12,9 @@ var arrItems = [];
 
 $(document).ready(updateList)
 function updateList() {
-  
+
     //console.dir(data);
-    $.getJSON('/api/todos', function (data){
+    $.getJSON('/api/todos', function (data) {
         $('#list').empty();
         for (let t of data) {
             $('#list').append(`<li>${t.itemInput}<button onclick="remove('${t.id}')">X</button></li>`)
@@ -55,11 +55,11 @@ function strikeItem() {
     });
 }
 
-function remove (id) {
+function remove(id) {
     $.ajax({
         url: `http://localhost:3000/api/todos/${id}`,
         type: 'DELETE',
-        success: function(result) {
+        success: function (result) {
             updateList();
         }
     });
