@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 //Hanna: lisätty file server
-var fs = require('fs)');
+var fs = require('fs');
 
 //Hanna: array nimetty todos
 var todos = [];
