@@ -1,11 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Add new item to the list
+  div(class="container")
+    h1= title
+    p Add new item to the list
 
-  form#form(method="post" action="/")
-  input#item(type="text" placeholder="Write new item" name="item" required)
-  button#button(type="submit" onclick="addItem()") Create
+    form#form(method="post" action="/")
+    input#item(type="text" placeholder="Write new item" name="item" required)
+    button#button(type="submit" onclick="addItem()") Add
+
+  div(id="list")  
 
   script(src='../javascripts/scripts.js')

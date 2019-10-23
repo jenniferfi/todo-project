@@ -1,8 +1,37 @@
 body {
+  background-color: rgb(247, 206, 103);
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 5px;
+}
+
+#button {
+  display: inline-block;
+  background-color: rgb(247, 206, 103);
+  color: black;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 1px;
+  padding: 4px 8px;
+}
+
+#button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+input {
+  padding: 4px 20px 4px 5px;
 }
