@@ -7,18 +7,18 @@ var fs = require('fs');
 var todos = [];
 
 // GET todos listing.
-router.get('/', function(req, res, next) {
+router.route('').get( function(req, res, next) {
   res.json(todos);
 }).post((req, res) => {
   console.dir(req.body)
   let newTodo = req.body;
   todos.push(newTodo);
   updateTodos();
-  res.status(201).location(`http://localhost:3000/api/${req.body.id}`)
-  send();
+  res.status(201).location(`http://localhost:3000/api/todos/${req.body.id}`)
+    .send();
 });
 
-router.route('/id')
+router.route('/:id')
 .get((req, res) => {
   for (var todo of todos) {
     if (todo.id == req.params.id) {
