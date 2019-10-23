@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 //Hanna: lisätty file server
 var fs = require('fs');
+const uuid = require('uuidv4').default;
 
 //Hanna: array nimetty todos
 var todos = [];
@@ -12,6 +13,7 @@ router.route('').get( function(req, res, next) {
 }).post((req, res) => {
   console.dir(req.body)
   let newTodo = req.body;
+  newTodo.id = uuid();
   todos.push(newTodo);
   updateTodos();
   res.status(201).location(`http://localhost:3000/api/todos/${req.body.id}`)
