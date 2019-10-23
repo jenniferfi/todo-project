@@ -42,10 +42,8 @@ function addItem() {
     }
 
     $.ajax(settings).done(function () {
-        console.log('Item logged in json');
+        updateList();
     });
-
-//Tähän jotain, mikä kutsuu lista-funktion (updateList), sitten kun palvelin-osuus on tehty
 
 emptyForm();
 }
