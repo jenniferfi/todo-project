@@ -35,3 +35,10 @@ a {
 input {
   padding: 4px 20px 4px 5px;
 }
+
+li {
+  padding: 5px;
+  color:#000;
+}
+
+.strike{text-decoration: line-through;}

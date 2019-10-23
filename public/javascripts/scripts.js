@@ -3,7 +3,7 @@ var itemInput = document.getElementById('item');
 var button = document.getElementById('button');
 
 class Item {
-    constructor (itemInput) {
+    constructor(itemInput) {
         this.itemInput = itemInput;
     }
 }
@@ -12,10 +12,10 @@ var arrItems = [];
 
 $(document).ready(updateList)
 function updateList() {
-    $.getJSON('/api/todos', function (data){
+    $.getJSON('/api/todos', function (data) {
         $('#list').empty();
         for (let t of data) {
-        $('#list').append(`<li>${t.itemInput}<button onclick="remove('${t.id}')">X</button></li>`)
+            $('#list').append(`<li>${t.itemInput}<button onclick="remove('${t.id}')">X</button></li>`)
         }
     })
 }
@@ -23,12 +23,12 @@ function updateList() {
 function addItem() {
     let itemValue = itemInput.value;
 
-    var item = new Item (itemValue);
+    var item = new Item(itemValue);
 
     arrItems.push(item);
 
     console.dir(arrItems)
-    
+
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -45,13 +45,20 @@ function addItem() {
         updateList();
     });
 
-emptyForm();
+    emptyForm();
 }
 
-function remove (id) {
-//Poistaa itemin ID:n perusteella
+$(document).ready(strikeItem)
+function strikeItem() {
+    $(document).on('click', 'li', function () {
+        $(this).toggleClass('strike');
+    });
+}
+
+function remove(id) {
+    //Poistaa itemin ID:n perusteella
 }
 
 function emptyForm() {
-    document.getElementById('item').value ="";
+    document.getElementById('item').value = "";
 }
