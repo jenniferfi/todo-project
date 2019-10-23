@@ -19,8 +19,23 @@ function addItem() {
 
     arrItems.push(item);
 
-    console.dir(arrItems);
-    //Tähän vielä funktio joka POSTaa itemin json-tiedostoon
+    console.dir(arrItems)
+    
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://localhost:3000/api/todos",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        },
+        "data": JSON.stringify(item)
+    }
+
+    $.ajax(settings).done(function () {
+        console.log('Item logged in json');
+    });
 
 //Tähän jotain, mikä kutsuu lista-funktion (updateList), sitten kun palvelin-osuus on tehty
 
