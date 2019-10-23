@@ -10,7 +10,15 @@ class Item {
 
 var arrItems = [];
 
-//Tähän tulee updateList-funktio, joka päivittää sivun listan sillä tiedolla mitä löytyy json-tiedostossa
+$(document).ready(updateList)
+function updateList() {
+    $.getJSON('/api/todos', function (data){
+        $('#list').empty();
+        for (let t of data) {
+        $('#list').append(`<li>${t.itemInput}<button onclick="remove('${t.id}')">X</button></li>`)
+        }
+    })
+}
 
 function addItem() {
     let itemValue = itemInput.value;
