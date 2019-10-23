@@ -2,10 +2,20 @@ var list = document.getElementById('list');
 var itemInput = document.getElementById('item');
 var button = document.getElementById('button');
 
-class Form {
-    addItem() {
-    return 'ok';
+class Item {
+    constructor (itemInput) {
+        this.itemInput = itemInput;
     }
 }
 
-module.exports = new Form();
+var arrItems = [];
+
+function addItem() {
+    let itemValue = itemInput.value;
+
+    var item = new Item (itemValue);
+
+    arrItems.push(item);
+
+    console.dir(arrItems);
+}
