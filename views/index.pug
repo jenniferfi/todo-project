@@ -5,5 +5,8 @@ block content
   p Add new item to the list
 
   form#formcreateperson(method="post" action="/addperson")
-  input#formname(type="text" placeholder="Write new item" name="item")
-  button#formsubmit(type="submit") Create
+  input#formname(type="text" placeholder="Write new item" name="item" required)
+  button#formsubmit(type="submit" onclick="addItem()") Create
+
+  script
+    include scripts.js
