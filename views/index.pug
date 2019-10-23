@@ -4,9 +4,9 @@ block content
   div(class="container")
     h1= title
 
-    form#form(method="post" action="/")
-    input#item(type="text" placeholder="Add new item" name="item" required)
-    button#button(type="submit" onclick="addItem()") Add
+    form#form(onsubmit="addItem(event)")
+    input#item(type="text" placeholder="Add new item to the list" name="item" required)
+    button#button(type="submit") Add
 
   div(id="list" class="container2")  
 

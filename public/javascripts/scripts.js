@@ -22,7 +22,8 @@ function updateList() {
     })
 }
 
-function addItem() {
+function addItem(ev) {
+    ev.preventDefault();
     let itemValue = itemInput.value;
 
     var item = new Item(itemValue);
