@@ -3,10 +3,9 @@ extends layout
 block content
   div(class="container")
     h1= title
-    p Add new item to the list
 
     form#form(method="post" action="/")
-    input#item(type="text" placeholder="Write new item" name="item" required)
+    input#item(type="text" placeholder="Add new item" name="item" required)
     button#button(type="submit" onclick="addItem()") Add
 
   div(id="list" class="container2")  
