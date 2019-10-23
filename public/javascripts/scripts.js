@@ -10,6 +10,8 @@ class Item {
 
 var arrItems = [];
 
+//Tähän tulee updateList-funktio, joka päivittää sivun listan sillä tiedolla mitä löytyy json-tiedostossa
+
 function addItem() {
     let itemValue = itemInput.value;
 
@@ -18,4 +20,17 @@ function addItem() {
     arrItems.push(item);
 
     console.dir(arrItems);
+    //Tähän vielä funktio joka POSTaa itemin json-tiedostoon
+
+//Tähän jotain, mikä kutsuu lista-funktion (updateList), sitten kun palvelin-osuus on tehty
+
+emptyForm();
+}
+
+function remove (id) {
+//Poistaa itemin ID:n perusteella
+}
+
+function emptyForm() {
+    document.getElementById('item').value ="";
 }
