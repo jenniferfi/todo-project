@@ -12,7 +12,9 @@ var arrItems = [];
 
 $(document).ready(updateList)
 function updateList() {
-    $.getJSON('/api/todos', function (data) {
+  
+    //console.dir(data);
+    $.getJSON('/api/todos', function (data){
         $('#list').empty();
         for (let t of data) {
             $('#list').append(`<li>${t.itemInput}<button onclick="remove('${t.id}')">X</button></li>`)
@@ -26,8 +28,6 @@ function addItem() {
     var item = new Item(itemValue);
 
     arrItems.push(item);
-
-    console.dir(arrItems)
 
     var settings = {
         "async": true,
@@ -55,8 +55,14 @@ function strikeItem() {
     });
 }
 
-function remove(id) {
-    //Poistaa itemin ID:n perusteella
+function remove (id) {
+    $.ajax({
+        url: `http://localhost:3000/api/todos/${id}`,
+        type: 'DELETE',
+        success: function(result) {
+            updateList();
+        }
+    });
 }
 
 function emptyForm() {
