@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 //Hanna: lisätty file server
 var fs = require('fs');
+//Hanna: lisätty id
 const uuid = require('uuidv4').default;
 
 //Hanna: array nimetty todos
@@ -11,7 +12,7 @@ var todos = [];
 router.route('').get( function(req, res, next) {
   res.json(todos);
 }).post((req, res) => {
-  console.dir(req.body)
+  //console.dir(req.body)
   let newTodo = req.body;
   newTodo.id = uuid();
   todos.push(newTodo);
@@ -44,12 +45,12 @@ router.route('/:id')
 
 function updateTodos() {
   fs.writeFile("todos.json", JSON.stringify(todos), () => {
-    console.log("List of to-dos updated!")
+    //console.log("List of to-dos updated!")
   })
 }
 
 fs.readFile("todos.json", (err,data) => {
   todos=JSON.parse(data);
-  console.dir(todos);
+  //console.dir(todos);
 })
 module.exports = router;
