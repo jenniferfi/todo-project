@@ -54,4 +54,9 @@ input {
   color:#000;
 }
 
+tr:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 .strike{text-decoration: line-through;}
