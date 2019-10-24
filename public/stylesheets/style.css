@@ -68,7 +68,16 @@ td.column {
   padding: 6px 0px;
 }
 
+tr:nth-child(even) {
+  background: rgb(206, 231, 251);
+  border-right: 1px solid rgb(206, 231, 251);
+}
+
+table {
+  border-collapse: collapse;
+  
 #content {
 display: grid;
 grid-template-columns: 1fr;
+
 }
