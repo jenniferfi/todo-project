@@ -75,9 +75,8 @@ tr:nth-child(even) {
 
 table {
   border-collapse: collapse;
-  
+}
 #content {
 display: grid;
 grid-template-columns: 1fr;
-
 }
