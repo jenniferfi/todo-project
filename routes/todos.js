@@ -38,8 +38,12 @@ router.route('/:id')
         return;
       }
     }
-    res.json("{'message': 'Error, no such to do!'}");
-  });
+    res.json("{'message': 'Error, no such to-do!'}");
+  })
+  /*.put((req, res) => {
+    //jos halutaan aidosti toimiva ratkaisu
+  })*/
+  ;
 //Hanna: päivittää todot
 function updateTodos() {
   fs.writeFile("todos.json", JSON.stringify(todos), () => {
