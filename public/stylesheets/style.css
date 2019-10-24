@@ -59,4 +59,13 @@ tr:hover {
   opacity: .8;
 }
 
-.strike{text-decoration: line-through;}
+.strike{
+  text-decoration: line-through;
+}
+
+.column {
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100px;
+}
