@@ -17,7 +17,7 @@ function updateList() {
     $.getJSON('/api/todos', function (data) {
         $('#tbl').empty();
         for (let t of data) {
-            $('#tbl').append(`<tr><td class="column">${t.itemInput}</td><td class="buttoncell"><button class="fa fa-trash" class="toright" onclick="remove('${t.id}')"></button></td></tr>`)
+            $('#tbl').append(`<tr><td class="column">${t.itemInput}</td><td class="buttoncell"><button class="fa fa-trash" onclick="remove('${t.id}')"></button></td></tr>`)
         }
     })
 }

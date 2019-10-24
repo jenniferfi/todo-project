@@ -69,3 +69,12 @@ tr:hover {
   padding: 10px;
   width: 100px;
 }
+
+tr:nth-child(even) {
+  background: rgb(206, 231, 251);
+  border-right: 1px solid rgb(206, 231, 251);
+}
+
+table {
+  border-collapse: collapse;
+}
