@@ -59,9 +59,9 @@ function strikeItem() {
 
 //Kaikki: taulukon sorttaus
 $(document).ready(sort)
-    function sort() {        
-        $('#tbl').sortable();  
-    };
+function sort() {
+    $('#tbl').sortable();
+};
 
 //Jennifer: poistaa itemin listasta (delete-pyyntö/rest)
 function remove(id) {
