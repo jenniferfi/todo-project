@@ -63,11 +63,9 @@ tr:hover {
   text-decoration: line-through;
 }
 
-.column {
-  margin: 0 auto;
-  margin-top: 20px;
-  padding: 10px;
-  width: 100px;
+td.column {
+  width: 100%;
+  padding: 6px 0px;
 }
 
 tr:nth-child(even) {
@@ -77,4 +75,9 @@ tr:nth-child(even) {
 
 table {
   border-collapse: collapse;
+  
+#content {
+display: grid;
+grid-template-columns: 1fr;
+
 }
