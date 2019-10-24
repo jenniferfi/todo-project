@@ -15,9 +15,9 @@ $(document).ready(updateList)
 function updateList() {
     //console.dir(data);
     $.getJSON('/api/todos', function (data) {
-        $('#list').empty();
+        $('#tbl').empty();
         for (let t of data) {
-            $('#list').append(`<tr><td>${t.itemInput}</td><td class="buttoncell"><button class="remove" onclick="remove('${t.id}')">X</button></td></tr>`)
+            $('#tbl').append(`<tr><td>${t.itemInput}</td><td class="buttoncell"><button class="remove" onclick="remove('${t.id}')">X</button></td></tr>`)
         }
     })
 }
@@ -52,10 +52,16 @@ function addItem(ev) {
 //Maria: yliviivaa itemin listassa kun sitä klikataan
 $(document).ready(strikeItem)
 function strikeItem() {
-    $(document).on('click', 'li', function () {
+    $(document).on('click', 'tr', function () {
         $(this).toggleClass('strike');
     });
 }
+
+//Kaikki: taulukon sorttaus
+$(document).ready(sort)
+    function sort() {        
+        $('#tbl').sortable();  
+    };
 
 //Jennifer: poistaa itemin listasta (delete-pyyntö/rest)
 function remove(id) {
