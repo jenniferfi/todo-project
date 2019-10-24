@@ -40,7 +40,7 @@ a {
   padding: 4px 8px;
 }
 
-#button:hover {
+button:hover {
   cursor: pointer;
   opacity: .8;
 }
@@ -65,10 +65,12 @@ tr:hover {
 
 td.column {
   width: 100%;
-  padding: 6px 0px;
+  padding: 10px 8px;
 }
-
-tr:nth-child(even) {
+td.buttoncell {
+  padding: 0px 8px;
+}
+tr:nth-child(odd) {
   background: rgb(206, 231, 251);
   border-right: 1px solid rgb(206, 231, 251);
 }
@@ -76,6 +78,7 @@ tr:nth-child(even) {
 table {
   border-collapse: collapse;
 }
+
 #content {
 display: grid;
 grid-template-columns: 1fr;
